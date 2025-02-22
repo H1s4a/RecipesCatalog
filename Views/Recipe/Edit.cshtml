@@ -3,7 +3,7 @@
 <section class="edit-section">
     <div class="container">
         <h2 class="text-center">Редактиране на рецепти</h2>
-        
+
         <div class="edit-form">
             <form asp-action="Edit" method="post">
                 <input type="hidden" asp-for="RecipeId" />
@@ -14,18 +14,18 @@
                 </div>
 
                 <div class="form-group">
-                    <label asp-for="Description" class="form-label">Категория</label>
-                    <select asp-for="CategoryId" asp-items="ViewBag.CatagoryId" class="form-select"></select>
+                    <label asp-for="CategoryId" class="form-label">Категория</label>
+                    <select asp-for="CategoryId" asp-items="ViewBag.CategoryId" class="form-select"></select>
                 </div>
 
                 <div class="form-group">
                     <label asp-for="Description" class="form-label">Описание</label>
-                    <input asp-for="Description" class="form-control" placeholder="Въведете Описание">
+                    <input asp-for="Description" class="form-control" placeholder="Въведете описание">
                 </div>
 
                 <div class="button-group">
                     <input type="submit" value="Запази" class="btn btn-success">
-                    <a href="@Url.Action("Index", "Home")" class="btn btn-secondary">Отказ</a>
+                    <a href="@Url.Action("Index", "Recipe")" class="btn btn-secondary">Отказ</a>
                 </div>
             </form>
         </div>

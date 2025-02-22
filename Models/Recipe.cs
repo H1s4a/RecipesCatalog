@@ -10,6 +10,6 @@
         public int? CategoryId { get; set; }
         public Category? Category { get; set; }
         public string ImagePath { get; set; }
-        public ICollection<RecipeIngredient> RecipeIngredients { get; set; } = new List<RecipeIngredient>(); // Инициализиране
+        public ICollection<RecipeIngredient> RecipeIngredients { get; set; } = new List<RecipeIngredient>();
     }
 }

@@ -9,6 +9,6 @@ public class RecipeIngredient
     public int RecipeId { get; set; }
     public Recipe Recipe { get; set; }
 
-    [Precision(18, 4)]
+    [Precision(18, 2)]
     public decimal Quantity { get; set; }
 }

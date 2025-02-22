@@ -40,6 +40,7 @@ namespace Recipes.Controllers
         public ActionResult Details(int id)
         {
             var recipe = _recipeCatalogContext.Recipes
+                .Include(r => r.Category)
                 .Include(r => r.RecipeIngredients)
                     .ThenInclude(ri => ri.Ingredient)
                 .FirstOrDefault(m => m.RecipeId == id);
@@ -49,6 +50,7 @@ namespace Recipes.Controllers
 
             return View(recipe);
         }
+
 
 
         [HttpGet]
