@@ -1,0 +1,25 @@
+﻿@model IEnumerable<Recipes.Models.RecipeModel.IndexViewRecipeModel>
+
+<h2>Резултати от търсенето</h2>
+
+@if (!Model.Any())
+{
+    <p>Няма намерени книги за вашето търсене.</p>
+}
+else
+{
+    <div class="book-list">
+        @foreach (var recipe in Model)
+        {
+            <div class="book">
+                <img src="@recipe.ImagePath" alt="@recipe.Title" />
+                <h3>@recipe.Title</h3>
+                <p>@recipe.Description</p>
+                <p>@recipe.Category?.Name</p>
+                <a href="@Url.Action("Details", "Home", new { id = recipe.RecipeId })" class="btn btn-info">Подробности</a>
+            </div>
+        }
+    </div>
+}
+
+<a href="/" class="btn btn-secondary">Обратно</a>
